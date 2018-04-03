@@ -1,0 +1,66 @@
+<div class="m-widget14__header">
+    <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    Services Cataloged by Micromanager
+                </h3>
+            </div>
+        </div>
+        <div class="m-portlet__head-tools">
+            <ul class="m-portlet__nav">
+                <li class="m-portlet__nav-item">
+                    <a [routerLink]="['/service']" [queryParams]="{ sourcePage: 'dashboard'}"  class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--pill m-btn--air">
+                        <span>
+                            <i class="la la-plus"></i>
+                            <span>
+                                Add Service
+                            </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row  align-items-center">
+    <div class="col">
+        <div id="m_chart_profit_share" class="m-widget14__chart" style="height: 160px">
+            <div class="m-widget14__stat">
+                {{microservices.length}}
+            </div>
+        </div>
+    </div>
+    <div *ngIf="microservices.length > 0; else showButton">
+        <div class="col">
+            <div class="m-widget14__legends">
+                <div class="m-widget14__legend">
+                    <span class="m-widget14__legend-bullet m--bg-accent"></span>
+                    <span class="m-widget14__legend-text">37% Sport Tickets</span>
+                </div>
+                <div class="m-widget14__legend">
+                    <span class="m-widget14__legend-bullet m--bg-warning"></span>
+                    <span class="m-widget14__legend-text">47% Business Events</span>
+                </div>
+                <div class="m-widget14__legend">
+                    <span class="m-widget14__legend-bullet m--bg-brand"></span>
+                    <span class="m-widget14__legend-text">19% Others</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #showButton let-user>
+        <div class="col">
+            <div class="m-widget14__legends">
+                <div class="m-widget14__legend">
+                    <span class="m-widget14__legend-text">It's Lonely in here</span>
+                </div>
+                <div class="m-widget14__legend">
+                    <span class="m-widget14__legend-text">
+                        Use button above to add services
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
